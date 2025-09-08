@@ -119,3 +119,53 @@ int main() {
     return 0;
 }
 ```
+### 4) 지역 변수와 전역 변수의 차이 및 사용 범위
+
+
+```c
+// 4) 지역 변수와 전역 변수의 차이 및 사용 범위
+#include <stdio.h>
+int g = 10;
+void f(void) {
+    int l = 5;
+    printf("l=%d g=%d\n", l, g);
+}
+int main(void) {
+    f();
+    return 0;
+}
+```
+
+### 5) 정적 변수(static)와 함수의 수명 주기
+```c
+// 5) 정적 변수(static)와 함수의 수명 주기
+#include <stdio.h>
+void count(void) {
+    static int s = 0;
+    s = s + 1;
+    printf("%d\n", s);
+}
+int main(void) {
+    count();
+    count();
+    count();
+    return 0;
+}
+```
+
+### 6) 재귀 함수(Recursive Function)와 종료 조건
+
+```c
+// 6) 재귀 함수와 종료 조건
+#include <stdio.h>
+int fact(int n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * fact(n - 1);
+}
+int main(void) {
+    printf("%d\n", fact(5));
+    return 0;
+}
+```
